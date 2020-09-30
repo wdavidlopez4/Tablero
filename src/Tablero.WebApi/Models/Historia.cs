@@ -12,5 +12,13 @@ namespace Tablero.WebApi.Models
         public List<string> PersonasAsociadas { get; set; }
 
         public string Supervisor { get; set; }
+
+        public Epic Epic { get; set; }
+
+        public Guid IdEpic { get; set; }
+
+        public List<Tarea> Tareas { get; set; }
+
+        public List<Bug> Bugs { get; set; }
     }
 }

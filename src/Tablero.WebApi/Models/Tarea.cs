@@ -11,6 +11,10 @@ namespace Tablero.WebApi.Models
 
         public string PersonaEncargado { get; set; }
 
-        public List<string> PersonasAsociadas { get; set; } 
+        public List<string> PersonasAsociadas { get; set; }
+
+        public Historia Historia { get; set; }
+
+        public Guid IdHistoria { get; set; }
     }
 }

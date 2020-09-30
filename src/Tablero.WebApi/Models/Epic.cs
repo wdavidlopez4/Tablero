@@ -11,5 +11,7 @@ namespace Tablero.WebApi.Models
 
         public int DuracionDeSpring { get; set; }
 
+        public List<Historia> Historias { get; set; }
+
     }
 }
