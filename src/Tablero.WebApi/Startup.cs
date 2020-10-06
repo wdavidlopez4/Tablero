@@ -43,6 +43,8 @@ namespace Tablero.WebApi
         {
             InjectionContainer.InyectarQL(services);
             InjectionContainer.InyectarServiciosApp(services);
+            InjectionContainer.InyectarRepositorio(services);
+            InjectionContainer.InyectarContext(services);
         }
     }
 }

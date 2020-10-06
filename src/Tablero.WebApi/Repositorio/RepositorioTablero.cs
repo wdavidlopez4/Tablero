@@ -7,11 +7,11 @@ using Tablero.WebApi.Context;
 
 namespace Tablero.WebApi.Repositorio
 {
-    public class Repositorio : IRepositorio
+    public class RepositorioTablero : IRepositorio
     {
         private readonly TableroContext tableroContext;
 
-        public Repositorio(TableroContext tableroContext)
+        public RepositorioTablero(TableroContext tableroContext)
         {
             this.tableroContext = tableroContext;
         }

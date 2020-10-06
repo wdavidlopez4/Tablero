@@ -1,12 +1,15 @@
 ﻿using GraphQL;
 using GraphQL.Server;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Tablero.WebApi.Context;
 using Tablero.WebApi.GraphGL.SchemaQL;
+using Tablero.WebApi.Repositorio;
 using Tablero.WebApi.Services.EpicoService;
 using Tablero.WebApi.Services.ErrorService;
 using Tablero.WebApi.Services.HistoriaService;
@@ -36,5 +39,18 @@ namespace Tablero.WebApi.IOC
             service.AddScoped<IServiceHistoria, HistoriaService>();
             service.AddScoped<IServiceEpico, EpicoService>();
         }
+
+        public static void InyectarContext(IServiceCollection service)
+        {
+            //configurar db 
+            service.AddDbContext<TableroContext>(options => options.UseInMemoryDatabase(databaseName: "test"));
+        }
+
+        public static void InyectarRepositorio(IServiceCollection service)
+        {
+            service.AddScoped<IRepositorio, RepositorioTablero>();
+        }
+
+
     }
 }
