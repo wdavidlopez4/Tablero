@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GraphQL.Server;
+using GraphQL.Server.Ui.Playground;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Tablero.WebApi.GraphGL.SchemaQL;
 using Tablero.WebApi.IOC;
 
 namespace Tablero.WebApi
@@ -27,6 +30,12 @@ namespace Tablero.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            //ejecutar graphql
+            app.UseGraphQL<SchemaTablero>();
+
+            //ejecutar playground
+            app.UseGraphQLPlayground(new GraphQLPlaygroundOptions());
 
             app.UseRouting();
 
