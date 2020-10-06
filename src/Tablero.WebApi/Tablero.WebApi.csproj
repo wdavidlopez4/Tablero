@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -13,8 +13,6 @@
 
   <ItemGroup>
     <Folder Include="GraphGL\Mutations\" />
-    <Folder Include="GraphGL\SchemaQL\" />
-    <Folder Include="GraphGL\Queries\" />
   </ItemGroup>
 
 </Project>
